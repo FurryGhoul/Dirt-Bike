@@ -67,9 +67,9 @@ bool ModulePlayer::Start()
 	car.wheels[1].suspensionRestLength = suspensionRestLength;
 	car.wheels[1].radius = wheel_radius;
 	car.wheels[1].width = wheel_width;
-	car.wheels[1].front = true;
-	car.wheels[1].drive = true;
-	car.wheels[1].brake = false;
+	car.wheels[1].front = false;
+	car.wheels[1].drive = false;
+	car.wheels[1].brake = true;
 	car.wheels[1].steering = false;
 
 	//// REAR-LEFT ------------------------
@@ -97,7 +97,7 @@ bool ModulePlayer::Start()
 	//car.wheels[3].steering = false;
 
 	vehicle = App->physics->AddVehicle(car);
-	vehicle->SetPos(0, 12, 10);
+	vehicle->SetPos(0, 5, 0);
 	
 	return true;
 }
@@ -135,6 +135,11 @@ update_status ModulePlayer::Update(float dt)
 	if(App->input->GetKey(SDL_SCANCODE_DOWN) == KEY_REPEAT)
 	{
 		brake = BRAKE_POWER;
+	}
+	
+	if (App->input->GetKey(SDL_SCANCODE_R) == KEY_REPEAT)
+	{
+		vehicle->SetPos(0, 5, 0);
 	}
 
 	vehicle->ApplyEngineForce(acceleration);

@@ -20,6 +20,17 @@ bool ModuleSceneIntro::Start()
 	App->camera->Move(vec3(1.0f, 1.0f, 0.0f));
 	App->camera->LookAt(vec3(0, 0, 0));
 
+	first_cube=new Cube(10, 1, 5);
+	first_cube->SetPos(0, 1, 10);
+	first_cube->SetRotation(-35, { 1,0,0 });	
+	
+	second_cube = new Cube(10, 1, 5);
+	second_cube->SetPos(0, 1, 15);
+	second_cube->SetRotation(35, { 1,0,0 });
+
+	ramp_1 =App->physics->AddBody(*first_cube,0.0f);
+	ramp_2 = App->physics->AddBody(*second_cube, 0.0f);
+	
 	return ret;
 }
 
@@ -38,11 +49,11 @@ update_status ModuleSceneIntro::Update(float dt)
 	p.axis = true;
 	p.Render();
 
+	first_cube->Render();
+	second_cube->Render();
+
 	float i = 1;
 	++i;
-	Cube c(1, 1, 1);
-	c.SetPos(0, i, 0);
-	c.Render();
 
 	return UPDATE_CONTINUE;
 }
