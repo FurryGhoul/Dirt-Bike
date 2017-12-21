@@ -142,6 +142,7 @@ update_status ModulePlayer::Update(float dt)
 	vehicle->Brake(brake);
 
 	vehicle->Render();
+	Player_camera();
 
 	char title[80];
 	sprintf_s(title, "%.1f Km/h", vehicle->GetKmh());
@@ -150,5 +151,20 @@ update_status ModulePlayer::Update(float dt)
 	return UPDATE_CONTINUE;
 }
 
+
+void ModulePlayer::Player_camera()
+{
+	car_pos = vehicle->vehicle->getChassisWorldTransform();
+	car_origin = { car_pos.getOrigin().getX(),car_pos.getOrigin().getY(),car_pos.getOrigin().getZ() };
+	car_dir = { car_pos.getBasis().getColumn(2).getX(),car_pos.getBasis().getColumn(2).getY(),car_pos.getBasis().getColumn(2).getZ()};
+
+	cam_new_pos = car_origin - 5 * car_dir;
+
+	App->camera->Position.x = cam_new_pos.x;
+	App->camera->Position.y = cam_new_pos.y;
+	App->camera->Position.z = cam_new_pos.z;
+
+	App->camera->Position.y = car_origin.y + 5;
+}
 
 
