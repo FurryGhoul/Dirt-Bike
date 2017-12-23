@@ -47,4 +47,22 @@ public:
 
 	Cube* second_cube;
 	PhysBody3D* ramp_2;
+
+	Cube* rect_1;
+	PhysBody3D* body_rect_1;
+	
+	Cube* rect_2;
+	PhysBody3D* body_rect_2;
+	
+	Cube* rect_3;
+	PhysBody3D* body_rect_3;
+	
+	Cube* rect_4;
+	PhysBody3D* body_rect_4;
+	
+	Cube* rect_5;
+	PhysBody3D* body_rect_5;
+
+	Cube* rect_6;
+	PhysBody3D* body_rect_6;
 };
