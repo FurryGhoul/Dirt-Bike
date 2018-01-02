@@ -98,4 +98,7 @@ public:
 	
 	Cube* rect_17;
 	PhysBody3D* body_rect_17;
+
+	Cube* peralte_1;
+	PhysBody3D* bperalte_1;
 };

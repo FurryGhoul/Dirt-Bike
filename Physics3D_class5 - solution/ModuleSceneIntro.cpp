@@ -20,67 +20,67 @@ bool ModuleSceneIntro::Start()
 	App->camera->Move(vec3(1.0f, 1.0f, 0.0f));
 	App->camera->LookAt(vec3(0, 0, 0));
 
-	rect_1 = new Cube(8, 1, 28*2);
+	rect_1 = new Cube(12, 1, 28*2);
 	rect_1->SetPos(-15, 0.99f, 15);
 	rect_1->SetRotation(-45, { 0,1,0 });
 
-	rect_2 = new Cube(8, 1, 156);
+	rect_2 = new Cube(12, 1, 156);
 	rect_2->SetPos(-35, 1, 50);
 
-	rect_3 = new Cube(8, 1, 24);
+	rect_3 = new Cube(12, 1, 24);
 	rect_3->SetPos(-27.6f, 0.99, 133.6f);
 	rect_3->SetRotation(45, { 0,1,0 });
 
-	rect_4 = new Cube(8, 1, 24);
+	rect_4 = new Cube(12, 1, 24);
 	rect_4->SetPos(-10.0f, 1, 141);
 	rect_4->SetRotation(90, { 0,1,0 });
 
-	rect_5 = new Cube(8, 1, 24);
+	rect_5 = new Cube(12, 1, 24);
 	rect_5->SetPos(7.7f, 0.99, 133.6f);
 	rect_5->SetRotation(-45, { 0,1,0 });
 
-	rect_6 = new Cube(8,1,71);
+	rect_6 = new Cube(12,1,71);
 	rect_6->SetPos(15.1, 1, 92.5f);
 
-	rect_7 = new Cube(8, 1, 24);
+	rect_7 = new Cube(12, 1, 24);
 	rect_7->SetPos(22.55f, 0.99, 51.4f);
 	rect_7->SetRotation(-45, { 0,1,0 });
 
-	rect_8 = new Cube(8, 1, 24);
+	rect_8 = new Cube(12, 1, 24);
 	rect_8->SetPos(40.0f, 1, 44.1);
 	rect_8->SetRotation(90, { 0,1,0 });
 
-	rect_9 = new Cube(8, 1, 24);
+	rect_9 = new Cube(12, 1, 24);
 	rect_9->SetPos(57.9f, 0.99, 51.4f);
 	rect_9->SetRotation(45, { 0,1,0 });
 
-	rect_10 = new Cube(8, 1, 100);
+	rect_10 = new Cube(12, 1, 100);
 	rect_10->SetPos(65, 1, 107.0f);
 
-	rect_11 = new Cube(8, 1, 24);
+	rect_11 = new Cube(12, 1, 24);
 	rect_11->SetPos(57.9f, 0.99,162.4f);
 	rect_11->SetRotation(-45, { 0,1,0 });
 
-	rect_12 = new Cube(8, 1, 100);
+	rect_12 = new Cube(12, 1, 100);
 	rect_12->SetPos(2, 1, 169.5f);
 	rect_12->SetRotation(90, { 0,1,0 });
 
-	rect_13 = new Cube(8, 1, 24);
+	rect_13 = new Cube(12, 1, 24);
 	rect_13->SetPos(-53.9f, 0.99, 162.4f);
 	rect_13->SetRotation(45, { 0,1,0 });
 
-	rect_14 = new Cube(8, 1, 184.8f);
+	rect_14 = new Cube(12, 1, 184.8f);
 	rect_14->SetPos(-61, 1, 64.2f);
 
-	rect_15 = new Cube(8, 1, 14);
+	rect_15 = new Cube(12, 1, 14);
 	rect_15->SetPos(-57.0f, 0.99, -30.2f);
 	rect_15->SetRotation(-45, { 0,1,0 });
 
-	rect_16 = new Cube(8, 1, 14);
+	rect_16 = new Cube(12, 1, 14);
 	rect_16->SetPos(-38.8f, 0.99, -30.2f);
 	rect_16->SetRotation(45, { 0,1,0 });
 
-	rect_17 = new Cube(8, 1, 14);
+	rect_17 = new Cube(12, 1, 14);
 	rect_17->SetPos(-47.8f, 0.99, -34.0f);
 	rect_17->SetRotation(90, { 0,1,0 });
 
