@@ -89,4 +89,13 @@ public:
 
 	Cube* rect_14;
 	PhysBody3D* body_rect_14;
+
+	Cube* rect_15;
+	PhysBody3D* body_rect_15;
+	
+	Cube* rect_16;
+	PhysBody3D* body_rect_16;
+	
+	Cube* rect_17;
+	PhysBody3D* body_rect_17;
 };

@@ -65,6 +65,25 @@ bool ModuleSceneIntro::Start()
 	rect_12->SetPos(2, 1, 169.5f);
 	rect_12->SetRotation(90, { 0,1,0 });
 
+	rect_13 = new Cube(8, 1, 24);
+	rect_13->SetPos(-53.9f, 0.99, 162.4f);
+	rect_13->SetRotation(45, { 0,1,0 });
+
+	rect_14 = new Cube(8, 1, 184.8f);
+	rect_14->SetPos(-61, 1, 64.2f);
+
+	rect_15 = new Cube(8, 1, 14);
+	rect_15->SetPos(-57.0f, 0.99, -30.2f);
+	rect_15->SetRotation(-45, { 0,1,0 });
+
+	rect_16 = new Cube(8, 1, 14);
+	rect_16->SetPos(-38.8f, 0.99, -30.2f);
+	rect_16->SetRotation(45, { 0,1,0 });
+
+	rect_17 = new Cube(8, 1, 14);
+	rect_17->SetPos(-47.8f, 0.99, -34.0f);
+	rect_17->SetRotation(90, { 0,1,0 });
+
 	body_rect_1= App->physics->AddBody(*rect_1, 0.0f);
 	body_rect_2 = App->physics->AddBody(*rect_2, 0.0f);
 	body_rect_3= App->physics->AddBody(*rect_3, 0.0f);
@@ -77,7 +96,12 @@ bool ModuleSceneIntro::Start()
 	body_rect_10 = App->physics->AddBody(*rect_10, 0.0f);
 	body_rect_11 = App->physics->AddBody(*rect_11, 0.0f);
 	body_rect_12 = App->physics->AddBody(*rect_12, 0.0f);
-	
+	body_rect_13 = App->physics->AddBody(*rect_13, 0.0f);
+	body_rect_14 = App->physics->AddBody(*rect_14, 0.0f);
+	body_rect_15 = App->physics->AddBody(*rect_15, 0.0f);
+	body_rect_16 = App->physics->AddBody(*rect_16, 0.0f);
+	body_rect_17 = App->physics->AddBody(*rect_17, 0.0f);
+
 	return ret;
 }
 
@@ -110,6 +134,11 @@ update_status ModuleSceneIntro::Update(float dt)
 	rect_10->Render();
 	rect_11->Render();
 	rect_12->Render();
+	rect_13->Render();
+	rect_14->Render();
+	rect_15->Render();
+	rect_16->Render();
+	rect_17->Render();
 
 	float i = 1;
 	++i;
