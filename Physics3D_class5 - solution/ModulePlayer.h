@@ -24,13 +24,23 @@ public:
 public:
 
 	PhysVehicle3D* vehicle;
+	
 	float turn;
 	float acceleration;
 	float brake;
+	
 	vec3 car_origin;
 	vec3 car_dir;
 	vec3 cam_new_pos;
 	vec3 point_look;
+
+	bool start_race=false;
+	bool checkpoint = false;
+	
 	btTransform car_pos;
+
+	Timer race_time;
+
+	uint laps;
 
 };

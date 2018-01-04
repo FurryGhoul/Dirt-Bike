@@ -84,6 +84,31 @@ bool ModuleSceneIntro::Start()
 	rect_17->SetPos(-47.8f, 0.99, -34.0f);
 	rect_17->SetRotation(90, { 0,1,0 });
 
+	finish_1 = new Cube(2, 10, 1);
+	finish_1->SetPos(-28, 5, 50);
+
+	finish_2 = new Cube(2, 10, 1);
+	finish_2->SetPos(-42, 5, 50);
+
+	finish_3 = new Cube(12, 2, 1);
+	finish_3->SetPos(-35, 10, 50);
+
+	cylinder_1 = new Cylinder(2.0f, 12);
+	cylinder_1->SetPos(15.1, 1, 105);
+
+	cylinder_2 = new Cylinder(3.0f, 12);
+	cylinder_2->SetPos(15.1, 0, 92.5f);
+
+	cylinder_3 = new Cylinder(2.0f, 12);
+	cylinder_3->SetPos(15.1, 1, 80);
+
+	cylinder_4 = new Cylinder(3.0f, 12);
+	cylinder_4->SetPos(15.1, 0, 115);
+
+	cylinder_5 = new Cylinder(2.0f, 12);
+	cylinder_5->SetPos(15.1, 1, 70);
+
+
 	body_rect_1= App->physics->AddBody(*rect_1, 0.0f);
 	body_rect_2 = App->physics->AddBody(*rect_2, 0.0f);
 	body_rect_3= App->physics->AddBody(*rect_3, 0.0f);
@@ -101,6 +126,16 @@ bool ModuleSceneIntro::Start()
 	body_rect_15 = App->physics->AddBody(*rect_15, 0.0f);
 	body_rect_16 = App->physics->AddBody(*rect_16, 0.0f);
 	body_rect_17 = App->physics->AddBody(*rect_17, 0.0f);
+	
+	bfinish_1 = App->physics->AddBody(*finish_1, 0.0f);
+	bfinish_2 = App->physics->AddBody(*finish_2, 0.0f);
+	bfinish_3 = App->physics->AddBody(*finish_3, 0.0f);
+
+	bcylinder_1= App->physics->AddBody(*cylinder_1, 0.0f);
+	bcylinder_2 = App->physics->AddBody(*cylinder_2, 0.0f);
+	bcylinder_3 = App->physics->AddBody(*cylinder_3, 0.0f);
+	bcylinder_4 = App->physics->AddBody(*cylinder_4, 0.0f);
+	bcylinder_5 = App->physics->AddBody(*cylinder_5, 0.0f);
 
 	return ret;
 }
@@ -116,8 +151,10 @@ bool ModuleSceneIntro::CleanUp()
 // Update
 update_status ModuleSceneIntro::Update(float dt)
 {
+	Color plane_color(200, 100, 100);
 	Plane p(0, 1, 0, 0);
 	p.axis = true;
+	p.color = Red;
 	p.Render();
 
 	/*first_cube->Render();
@@ -139,6 +176,17 @@ update_status ModuleSceneIntro::Update(float dt)
 	rect_15->Render();
 	rect_16->Render();
 	rect_17->Render();
+
+	finish_1->Render();
+	finish_2->Render();
+	finish_3->Render();
+
+	cylinder_1->Render();
+	cylinder_2->Render();
+	cylinder_3->Render();
+	cylinder_4->Render();
+	cylinder_5->Render();
+
 
 	float i = 1;
 	++i;

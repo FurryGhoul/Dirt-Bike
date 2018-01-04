@@ -99,6 +99,28 @@ public:
 	Cube* rect_17;
 	PhysBody3D* body_rect_17;
 
-	Cube* peralte_1;
-	PhysBody3D* bperalte_1;
+	Cube* finish_1;
+	PhysBody3D* bfinish_1;
+
+	Cube* finish_2;
+	PhysBody3D* bfinish_2;
+
+	Cube* finish_3;
+	PhysBody3D* bfinish_3;
+
+	Cylinder* cylinder_1;
+	PhysBody3D* bcylinder_1;
+
+	Cylinder* cylinder_2;
+	PhysBody3D* bcylinder_2;
+
+	Cylinder* cylinder_3;
+	PhysBody3D* bcylinder_3;
+
+	Cylinder* cylinder_4;
+	PhysBody3D* bcylinder_4;
+
+	Cylinder* cylinder_5;
+	PhysBody3D* bcylinder_5;
+
 };

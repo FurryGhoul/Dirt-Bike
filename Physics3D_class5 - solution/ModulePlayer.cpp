@@ -98,7 +98,18 @@ bool ModulePlayer::Start()
 
 	vehicle = App->physics->AddVehicle(car);
 	vehicle->SetPos(0, 4, 0);
-	
+
+	///*mat4x4 rotation_m = mat4x4(
+	//	1.0f, 0.0f, 0.0f, 0.0f,
+	//	0.0f, 4.0f, 0.0f, 4.0f,
+	//	0.0f, 0.0f, 1.0f, 0.0f,
+	//	0.0f, 0.0f, 0.0f, 1.0f);*/
+
+	//vehicle->SetTransform(rotation_m.M);
+	race_time.Start();
+	race_time.Stop();
+	laps = 0;
+
 	return true;
 }
 
@@ -114,6 +125,9 @@ bool ModulePlayer::CleanUp()
 update_status ModulePlayer::Update(float dt)
 {
 	turn = acceleration = brake = 0.0f;
+
+	float posx = vehicle->vehicle->getRigidBody()->getCenterOfMassPosition().getX();
+	float posz = vehicle->vehicle->getRigidBody()->getCenterOfMassPosition().getZ();
 
 	if(App->input->GetKey(SDL_SCANCODE_UP) == KEY_REPEAT)
 	{
@@ -144,10 +158,44 @@ update_status ModulePlayer::Update(float dt)
 		}
 	}
 	
-	if (App->input->GetKey(SDL_SCANCODE_R) == KEY_REPEAT)
+	if (App->input->GetKey(SDL_SCANCODE_R) == KEY_DOWN)
 	{
+		vehicle->vehicle->getRigidBody()->setLinearVelocity({ 0,0,0 });
 		vehicle->SetPos(0, 5, 0);
+		race_time.Start();
+		race_time.Stop();
+		start_race = false;
+		laps = 0;
 	}
+
+	if (posx <= -29 && posx >= -41 && posz <= 50 && posz>=49)
+	{
+		if (!start_race)
+		{
+			start_race = true;
+			race_time.Start();
+			laps = 1;
+		}
+		else
+		{
+			if (checkpoint)
+			{
+				laps++;
+				checkpoint = false;
+			}
+			if (laps == 4)
+			{
+				laps = 0;
+				race_time.Stop();
+			}
+		}
+	}
+	
+	if (posx <= -55 && posx >= -67 && posz <= 64 && posz >= 60)
+	{
+		checkpoint = true;
+	}
+
 
 	vehicle->ApplyEngineForce(acceleration);
 	vehicle->Turn(turn);
@@ -156,9 +204,15 @@ update_status ModulePlayer::Update(float dt)
 	vehicle->Render();
 	Player_camera();
 
-	char title[80];
-	sprintf_s(title, "%.1f Km/h", vehicle->GetKmh());
+	
+	
+	char title[128];
+	sprintf_s(title, "%.1f Km/h Lap: %u Time: %.3f", vehicle->GetKmh(), laps, (float)race_time.Read()/1000);
 	App->window->SetTitle(title);
+
+	
+	LOG("x=%.1f", posx);
+	LOG("z=%.1f", posz);
 
 	return UPDATE_CONTINUE;
 }
