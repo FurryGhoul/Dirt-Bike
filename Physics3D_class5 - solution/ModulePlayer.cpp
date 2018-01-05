@@ -175,6 +175,7 @@ update_status ModulePlayer::Update(float dt)
 			start_race = true;
 			race_time.Start();
 			laps = 1;
+			App->audio->PlayFx(1);
 		}
 		else
 		{

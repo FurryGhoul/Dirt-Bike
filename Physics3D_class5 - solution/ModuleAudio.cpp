@@ -41,6 +41,8 @@ bool ModuleAudio::Init()
 		ret = false;
 	}
 
+	LoadFx("music/SFX_1.wav");
+
 	return ret;
 }
 
@@ -114,6 +116,8 @@ bool ModuleAudio::PlayMusic(const char* path, float fade_time)
 			}
 		}
 	}
+
+	Mix_VolumeMusic(50);
 
 	LOG("Successfully playing %s", path);
 	return ret;
