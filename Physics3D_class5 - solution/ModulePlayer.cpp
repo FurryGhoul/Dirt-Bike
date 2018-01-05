@@ -99,11 +99,13 @@ bool ModulePlayer::Start()
 	vehicle = App->physics->AddVehicle(car);
 	vehicle->SetPos(0, 4, 0);
 
-	///*mat4x4 rotation_m = mat4x4(
-	//	1.0f, 0.0f, 0.0f, 0.0f,
-	//	0.0f, 4.0f, 0.0f, 4.0f,
-	//	0.0f, 0.0f, 1.0f, 0.0f,
-	//	0.0f, 0.0f, 0.0f, 1.0f);*/
+	init_matrix = mat4x4(
+		0.5253220f, 0, 0.8509035f, 0,
+		0, 1, 0, 0,
+		-0.8509035f, 0, 0.5253220f, 0,
+		0, 0, 0, 1);
+
+	vehicle->SetTransform(init_matrix.M);
 
 	//vehicle->SetTransform(rotation_m.M);
 	race_time.Start();
@@ -162,6 +164,7 @@ update_status ModulePlayer::Update(float dt)
 	{
 		vehicle->vehicle->getRigidBody()->setLinearVelocity({ 0,0,0 });
 		vehicle->SetPos(0, 5, 0);
+		vehicle->SetTransform(init_matrix.M);
 		race_time.Start();
 		race_time.Stop();
 		start_race = false;
