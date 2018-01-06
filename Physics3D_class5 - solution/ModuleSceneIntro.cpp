@@ -35,15 +35,20 @@ bool ModuleSceneIntro::Start()
 	finish_3->SetPos(-35, 10, 50);
 	finish_3->color = Green;
 
-	column_1 = new Cylinder(0.5f, 12);
-	column_1->SetPos(2, 1, 169.5f);
+	column_1 = new Cylinder(0.5f, 4);
+	column_1->SetPos(2, 6, 169.5f);
 	column_1->SetRotation(90, { 0, 0, 1 });
 
-	rotwall_1 = new Cube(1, 2.5f, 5);
-	rotwall_1->SetPos(2, 5.f, 172.f);
+	rotwall_1 = new Cube(1, 6.f, 1);
+	rotwall_1->SetPos(2, 5.5f, 169.5f);
 
-	//App->physics->AddConstraintHinge(*bcolumn_1, *brotwall_1, { 2, 1, 169.5f }, { 2, 1, 172.f },/* { 0, 1, 0 }, { 0, 1, 0 },*/ false);
-	
+	column_2 = new Cylinder(0.5f, 4);
+	column_2->SetPos(-61, 3.5, 64.2f);
+	column_2->SetRotation(90, { 0, 0, 1 });
+
+	rotwall_2 = new Cube(1, 8.8f, 1);
+	rotwall_2->SetPos(-61, 3, 64.2f);
+
 	bfinish_1 = App->physics->AddBody(*finish_1, 0.0f);
 	bfinish_2 = App->physics->AddBody(*finish_2, 0.0f);
 	bfinish_3 = App->physics->AddBody(*finish_3, 0.0f);
@@ -51,6 +56,18 @@ bool ModuleSceneIntro::Start()
 	bcolumn_1 = App->physics->AddBody(*column_1, 0.0f);
 	brotwall_1 = App->physics->AddBody(*rotwall_1, 0.0f);
 
+	bcolumn_1 = App->physics->AddBody(*column_1, 10000.0f);
+	brotwall_1 = App->physics->AddBody(*rotwall_1, 100.0f);
+	bcolumn_2 = App->physics->AddBody(*column_2, 10000.0f);
+	brotwall_2 = App->physics->AddBody(*rotwall_2, 100.0f);
+
+	btHingeConstraint* rot_hinge = App->physics->AddConstraintHinge(*brotwall_1, *bcolumn_1, vec3{ 0, 0, 0 }, vec3{ 0, 0, 0 }, vec3{ 1, 0, 0 }, vec3{ 1, 0, 0 }, true);
+	rot_hinge->setLimit(1, 0);
+
+
+	btHingeConstraint* rot_hinge2 = App->physics->AddConstraintHinge(*brotwall_2, *bcolumn_2, vec3{ 0, 0, 0 }, vec3{ 0, 0, 0 }, vec3{ 1, 0, 0 }, vec3{ 1, 0, 0 }, true);
+	rot_hinge2->setLimit(1, 0);
+	
 	return ret;
 }
 
@@ -91,13 +108,20 @@ update_status ModuleSceneIntro::Update(float dt)
 		Jumps[i]->Render();
 	}
 
+	bcolumn_1->GetTransform(&(column_1->transform));
+	brotwall_1->GetTransform(&(rotwall_1->transform));
+	bcolumn_2->GetTransform(&(column_2->transform));
+	brotwall_2->GetTransform(&(rotwall_2->transform));
+
+
 	finish_1->Render();
 	finish_2->Render();
 	finish_3->Render();
 
 	column_1->Render();
-
 	rotwall_1->Render();
+	column_2->Render();
+	rotwall_2->Render();
 
 	float i = 1;
 	++i;
