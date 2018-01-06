@@ -37,11 +37,11 @@ bool ModuleSceneIntro::Start()
 	barrier_3 = new Cube(1, 5, 87);
 	barrier_3->SetPos(-28.5f, 1, 80.2f);
 
-	barrier_4 = new Cube(1, 5, 46);
-	barrier_4->SetPos(-28.5f, 1, -4);
+	barrier_4 = new Cube(1, 5, 49);
+	barrier_4->SetPos(-28.5f, 1, -5.5);
 
-	barrier_5 = new Cube(1, 5, 150);
-	barrier_5->SetPos(-41.5f, 1, 52.5f);
+	barrier_5 = new Cube(1, 5, 153);
+	barrier_5->SetPos(-41.5f, 1, 51.8f);
 
 	//rect3
 	barrier_6 = new Cube(1, 5, 16);
@@ -99,6 +99,78 @@ bool ModuleSceneIntro::Start()
 	barrier_18 = new Cube(1, 5, 16);
 	barrier_18->SetPos(53.f, 0.99, 55.6f);
 	barrier_18->SetRotation(45, { 0,1,0 });
+
+	barrier_19 = new Cube(1, 5, 27.5);
+	barrier_19->SetPos(62.5f, 0.99, 48.f);
+	barrier_19->SetRotation(45, { 0,1,0 });
+
+	//rect10
+	barrier_20 = new Cube(1, 5, 92);
+	barrier_20->SetPos(58.5f, 1, 107.0f);
+
+	barrier_21 = new Cube(1, 5, 101);
+	barrier_21->SetPos(70.5f, 1, 107.0f);
+
+	//rect11
+	barrier_22 = new Cube(1, 5, 27);
+	barrier_22->SetPos(61.9f, 0.99, 166.4f);
+	barrier_22->SetRotation(-45, { 0,1,0 });
+
+	barrier_23 = new Cube(1, 5, 15);
+	barrier_23->SetPos(53.4f, 0.99, 157.8f);
+	barrier_23->SetRotation(-45, { 0,1,0 });
+
+	//rect12
+	barrier_24 = new Cube(1, 5, 104);
+	barrier_24->SetPos(1, 1, 175.5f);
+	barrier_24->SetRotation(90, { 0,1,0 });
+
+	barrier_25 = new Cube(1, 5, 93);
+	barrier_25->SetPos(2, 1, 163.f);
+	barrier_25->SetRotation(90, { 0,1,0 });
+
+	//rect13
+	barrier_26 = new Cube(1, 5, 28);
+	barrier_26->SetPos(-57.9f, 0.99, 166.4f);
+	barrier_26->SetRotation(45, { 0,1,0 });
+
+	barrier_27 = new Cube(1, 5, 15);
+	barrier_27->SetPos(-49.3f, 0.99, 157.9f);
+	barrier_27->SetRotation(45, { 0,1,0 });
+
+	//rect14
+	barrier_28 = new Cube(1, 5, 184.8f);
+	barrier_28->SetPos(-67.5, 1, 64.2f);
+
+	barrier_29 = new Cube(1, 5, 176.8f);
+	barrier_29->SetPos(-54.5, 1, 64.6f);
+
+	//rect15
+	barrier_30 = new Cube(1, 5, 18);
+	barrier_30->SetPos(-61.0f, 0.99, -34.2f);
+	barrier_30->SetRotation(-45, { 0,1,0 });
+
+	barrier_31 = new Cube(1, 5, 6);
+	barrier_31->SetPos(-52.4f, 0.99, -25.7f);
+	barrier_31->SetRotation(-45, { 0,1,0 });
+
+	//rect17
+	barrier_32 = new Cube(1, 5, 16);
+	barrier_32->SetPos(-47.8f, 0.99, -40.0f);
+	barrier_32->SetRotation(90, { 0,1,0 });
+
+	barrier_33 = new Cube(1, 5, 6);
+	barrier_33->SetPos(-47.7f, 0.99, -27.7f);
+	barrier_33->SetRotation(90, { 0,1,0 });
+
+	//rect16
+	barrier_34 = new Cube(1, 5, 18);
+	barrier_34->SetPos(-33.6f, 0.99, -33.5f);
+	barrier_34->SetRotation(45, { 0,1,0 });
+
+	barrier_35 = new Cube(1, 5, 5.5);
+	barrier_35->SetPos(-43.25f, 0.99, -26.05f);
+	barrier_35->SetRotation(45, { 0,1,0 });
 
 	rect_1 = new Cube(12, 1, 28*2);
 	rect_1->SetPos(-15, 0.99f, 15);
@@ -208,6 +280,23 @@ bool ModuleSceneIntro::Start()
 	bbarrier_16 = App->physics->AddBody(*barrier_16, 0.0f);
 	bbarrier_17 = App->physics->AddBody(*barrier_17, 0.0f);
 	bbarrier_18 = App->physics->AddBody(*barrier_18, 0.0f);
+	bbarrier_19 = App->physics->AddBody(*barrier_19, 0.0f);
+	bbarrier_20 = App->physics->AddBody(*barrier_20, 0.0f);
+	bbarrier_21 = App->physics->AddBody(*barrier_21, 0.0f);
+	bbarrier_22 = App->physics->AddBody(*barrier_22, 0.0f);
+	bbarrier_23 = App->physics->AddBody(*barrier_23, 0.0f);
+	bbarrier_24 = App->physics->AddBody(*barrier_24, 0.0f);
+	bbarrier_25 = App->physics->AddBody(*barrier_25, 0.0f);
+	bbarrier_26 = App->physics->AddBody(*barrier_26, 0.0f);
+	bbarrier_27 = App->physics->AddBody(*barrier_27, 0.0f);
+	bbarrier_28 = App->physics->AddBody(*barrier_28, 0.0f);
+	bbarrier_29 = App->physics->AddBody(*barrier_29, 0.0f);
+	bbarrier_30 = App->physics->AddBody(*barrier_30, 0.0f);
+	bbarrier_31 = App->physics->AddBody(*barrier_31, 0.0f);
+	bbarrier_32 = App->physics->AddBody(*barrier_32, 0.0f);
+	bbarrier_33 = App->physics->AddBody(*barrier_33, 0.0f);
+	bbarrier_34 = App->physics->AddBody(*barrier_34, 0.0f);
+	bbarrier_35 = App->physics->AddBody(*barrier_35, 0.0f);
 
 	Jump_1 = new Cube(12, 1, 10);
 	Jump_1->SetPos(-35, 1, 70);
@@ -253,11 +342,11 @@ bool ModuleSceneIntro::Start()
 	bfinish_2 = App->physics->AddBody(*finish_2, 0.0f);
 	bfinish_3 = App->physics->AddBody(*finish_3, 0.0f);
 
-	bcylinder_1= App->physics->AddBody(*cylinder_1, 0.0f);
+	/*bcylinder_1= App->physics->AddBody(*cylinder_1, 0.0f);
 	bcylinder_2 = App->physics->AddBody(*cylinder_2, 0.0f);
 	bcylinder_3 = App->physics->AddBody(*cylinder_3, 0.0f);
 	bcylinder_4 = App->physics->AddBody(*cylinder_4, 0.0f);
-	bcylinder_5 = App->physics->AddBody(*cylinder_5, 0.0f);
+	bcylinder_5 = App->physics->AddBody(*cylinder_5, 0.0f);*/
 
 	bJump_1 = App->physics->AddBody(*Jump_1, 0.0f);
 	bJump_2 = App->physics->AddBody(*Jump_2, 0.0f);
@@ -306,6 +395,23 @@ update_status ModuleSceneIntro::Update(float dt)
 	barrier_16->Render();
 	barrier_17->Render();
 	barrier_18->Render();
+	barrier_19->Render();
+	barrier_20->Render();
+	barrier_21->Render();
+	barrier_22->Render();
+	barrier_23->Render();
+	barrier_24->Render();
+	barrier_25->Render();
+	barrier_26->Render();
+	barrier_27->Render();
+	barrier_28->Render();
+	barrier_29->Render();
+	barrier_30->Render();
+	barrier_31->Render();
+	barrier_32->Render();
+	barrier_33->Render();
+	barrier_34->Render();
+	barrier_35->Render();
 
 	rect_1->Render();
 	rect_2->Render();

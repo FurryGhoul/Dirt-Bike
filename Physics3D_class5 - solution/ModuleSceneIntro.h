@@ -180,6 +180,54 @@ public:
 	Cube* barrier_19;
 	PhysBody3D* bbarrier_19;
 
+	Cube* barrier_20;
+	PhysBody3D* bbarrier_20;
+
+	Cube* barrier_21;
+	PhysBody3D* bbarrier_21;
+
+	Cube* barrier_22;
+	PhysBody3D* bbarrier_22;
+
+	Cube* barrier_23;
+	PhysBody3D* bbarrier_23;
+
+	Cube* barrier_24;
+	PhysBody3D* bbarrier_24;
+
+	Cube* barrier_25;
+	PhysBody3D* bbarrier_25;
+
+	Cube* barrier_26;
+	PhysBody3D* bbarrier_26;
+
+	Cube* barrier_27;
+	PhysBody3D* bbarrier_27;
+
+	Cube* barrier_28;
+	PhysBody3D* bbarrier_28;
+
+	Cube* barrier_29;
+	PhysBody3D* bbarrier_29;
+
+	Cube* barrier_30;
+	PhysBody3D* bbarrier_30;
+
+	Cube* barrier_31;
+	PhysBody3D* bbarrier_31;
+
+	Cube* barrier_32;
+	PhysBody3D* bbarrier_32;
+
+	Cube* barrier_33;
+	PhysBody3D* bbarrier_33;
+
+	Cube* barrier_34;
+	PhysBody3D* bbarrier_34;
+
+	Cube* barrier_35;
+	PhysBody3D* bbarrier_35;
+
 	Cube* Jump_1;
 	PhysBody3D* bJump_1;
 
