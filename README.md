@@ -5,12 +5,12 @@ Dirt Bike is a 3D game made with Bullet3D
 CONTROLS:
 --------
 
- -[UP] Arrow	--------	Accelerate
- -[DOWN] Arrow	--------	Brake and go backwards
- -[RIGHT] Arrow	--------	Turn Right
- -[LEFT] Arrow	--------	Turn Left
+ -[UP] Arrow	      = Accelerate
+ -[DOWN] Arrow	      = Brake and go backwards
+ -[RIGHT] Arrow	      = Turn Right
+ -[LEFT] Arrow	      = Turn Left
 
- -[R]		--------	Restart
+ -[R]		      = Restart
 
 Gameplay
 --------
