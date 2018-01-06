@@ -246,5 +246,9 @@ public:
 	Cube* Jump_6;
 	PhysBody3D* bJump_6;
 
+	Cylinder* column_1;
+	PhysBody3D* bcolumn_1;
 
+	Cube* rotwall_1;
+	PhysBody3D* brotwall_1;
 };

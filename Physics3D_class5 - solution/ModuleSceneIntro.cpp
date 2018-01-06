@@ -260,6 +260,36 @@ bool ModuleSceneIntro::Start()
 	cylinder_5 = new Cylinder(2.0f, 12);
 	cylinder_5->SetPos(15.1, 1, 70);
 
+	Jump_1 = new Cube(12, 1, 10);
+	Jump_1->SetPos(-35, 1, 70);
+	Jump_1->SetRotation(-20, { 1,0,0 });
+
+	Jump_2 = new Cube(12, 1, 10);
+	Jump_2->SetPos(-35, 2.8, 80);
+
+	Jump_3 = new Cube(12, 1, 10);
+	Jump_3->SetPos(-35, 1, 90);
+	Jump_3->SetRotation(20, { 1,0,0 });
+
+	Jump_4 = new Cube(10, 1, 12);
+	Jump_4->SetPos(20, 1, 169.5f);
+	Jump_4->SetRotation(-20, { 0,0,1 });
+
+	Jump_5 = new Cube(20, 1, 12);
+	Jump_5->SetPos(2, 2.8, 169.5f);
+
+	Jump_6 = new Cube(10, 1, 12);
+	Jump_6->SetPos(-14, 1, 169.5f);
+	Jump_6->SetRotation(20, { 0,0,1 });
+
+	column_1 = new Cylinder(0.5f, 12);
+	column_1->SetPos(2, 1, 169.5f);
+	column_1->SetRotation(90, { 0, 0, 1 });
+
+	rotwall_1 = new Cube(1, 2.5f, 5);
+	rotwall_1->SetPos(2, 5.f, 172.f);
+
+	//App->physics->AddConstraintHinge(*bcolumn_1, *brotwall_1, { 2, 1, 169.5f }, { 2, 1, 172.f },/* { 0, 1, 0 }, { 0, 1, 0 },*/ false);
 
 	bbarrier_1 = App->physics->AddBody(*barrier_1, 0.0f);
 	bbarrier_2 = App->physics->AddBody(*barrier_2, 0.0f);
@@ -298,28 +328,6 @@ bool ModuleSceneIntro::Start()
 	bbarrier_34 = App->physics->AddBody(*barrier_34, 0.0f);
 	bbarrier_35 = App->physics->AddBody(*barrier_35, 0.0f);
 
-	Jump_1 = new Cube(12, 1, 10);
-	Jump_1->SetPos(-35, 1, 70);
-	Jump_1->SetRotation(-20, { 1,0,0 });
-
-	Jump_2 = new Cube(12, 1, 10);
-	Jump_2->SetPos(-35, 2.8, 80);
-
-	Jump_3 = new Cube(12, 1, 10);
-	Jump_3->SetPos(-35, 1, 90);
-	Jump_3->SetRotation(20, { 1,0,0 });
-
-	Jump_4 = new Cube(10, 1, 12);
-	Jump_4->SetPos(20, 1, 169.5f);
-	Jump_4->SetRotation(-20, { 0,0,1 });
-
-	Jump_5 = new Cube(20, 1, 12);
-	Jump_5->SetPos(2, 2.8, 169.5f);
-
-	Jump_6 = new Cube(10, 1, 12);
-	Jump_6->SetPos(-14, 1, 169.5f);
-	Jump_6->SetRotation(20, { 0,0,1 });
-
 	body_rect_1= App->physics->AddBody(*rect_1, 0.0f);
 	body_rect_2 = App->physics->AddBody(*rect_2, 0.0f);
 	body_rect_3= App->physics->AddBody(*rect_3, 0.0f);
@@ -342,11 +350,11 @@ bool ModuleSceneIntro::Start()
 	bfinish_2 = App->physics->AddBody(*finish_2, 0.0f);
 	bfinish_3 = App->physics->AddBody(*finish_3, 0.0f);
 
-	/*bcylinder_1= App->physics->AddBody(*cylinder_1, 0.0f);
+	bcylinder_1= App->physics->AddBody(*cylinder_1, 0.0f);
 	bcylinder_2 = App->physics->AddBody(*cylinder_2, 0.0f);
 	bcylinder_3 = App->physics->AddBody(*cylinder_3, 0.0f);
 	bcylinder_4 = App->physics->AddBody(*cylinder_4, 0.0f);
-	bcylinder_5 = App->physics->AddBody(*cylinder_5, 0.0f);*/
+	bcylinder_5 = App->physics->AddBody(*cylinder_5, 0.0f);
 
 	bJump_1 = App->physics->AddBody(*Jump_1, 0.0f);
 	bJump_2 = App->physics->AddBody(*Jump_2, 0.0f);
@@ -354,6 +362,9 @@ bool ModuleSceneIntro::Start()
 	bJump_4 = App->physics->AddBody(*Jump_4, 0.0f);
 	bJump_5 = App->physics->AddBody(*Jump_5, 0.0f);
 	bJump_6 = App->physics->AddBody(*Jump_6, 0.0f);
+
+	bcolumn_1 = App->physics->AddBody(*column_1, 0.0f);
+	brotwall_1 = App->physics->AddBody(*rotwall_1, 0.0f);
 
 	return ret;
 }
@@ -447,6 +458,10 @@ update_status ModuleSceneIntro::Update(float dt)
 	Jump_4->Render();
 	Jump_5->Render();
 	Jump_6->Render();
+
+	column_1->Render();
+
+	rotwall_1->Render();
 
 	float i = 1;
 	++i;
