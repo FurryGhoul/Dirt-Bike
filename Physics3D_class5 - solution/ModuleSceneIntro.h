@@ -123,4 +123,22 @@ public:
 	Cylinder* cylinder_5;
 	PhysBody3D* bcylinder_5;
 
+	Cube* Jump_1;
+	PhysBody3D* bJump_1;
+
+	Cube* Jump_2;
+	PhysBody3D* bJump_2;
+
+	Cube* Jump_3;
+	PhysBody3D* bJump_3;
+
+	Cube* Jump_4;
+	PhysBody3D* bJump_4;
+
+	Cube* Jump_5;
+	PhysBody3D* bJump_5;
+
+	Cube* Jump_6;
+	PhysBody3D* bJump_6;
+
 };

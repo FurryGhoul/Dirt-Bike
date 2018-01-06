@@ -112,6 +112,28 @@ bool ModuleSceneIntro::Start()
 	cylinder_5 = new Cylinder(2.0f, 12);
 	cylinder_5->SetPos(15.1, 1, 70);
 
+	Jump_1 = new Cube(12, 1, 10);
+	Jump_1->SetPos(-35, 1, 70);
+	Jump_1->SetRotation(-20, { 1,0,0 });
+
+	Jump_2 = new Cube(12, 1, 10);
+	Jump_2->SetPos(-35, 2.8, 80);
+
+	Jump_3 = new Cube(12, 1, 10);
+	Jump_3->SetPos(-35, 1, 90);
+	Jump_3->SetRotation(20, { 1,0,0 });
+
+	Jump_4 = new Cube(10, 1, 12);
+	Jump_4->SetPos(20, 1, 169.5f);
+	Jump_4->SetRotation(-20, { 0,0,1 });
+
+	Jump_5 = new Cube(20, 1, 12);
+	Jump_5->SetPos(2, 2.8, 169.5f);
+
+	Jump_6 = new Cube(10, 1, 12);
+	Jump_6->SetPos(-14, 1, 169.5f);
+	Jump_6->SetRotation(20, { 0,0,1 });
+
 
 	body_rect_1= App->physics->AddBody(*rect_1, 0.0f);
 	body_rect_2 = App->physics->AddBody(*rect_2, 0.0f);
@@ -140,6 +162,13 @@ bool ModuleSceneIntro::Start()
 	bcylinder_3 = App->physics->AddBody(*cylinder_3, 0.0f);
 	bcylinder_4 = App->physics->AddBody(*cylinder_4, 0.0f);
 	bcylinder_5 = App->physics->AddBody(*cylinder_5, 0.0f);
+
+	bJump_1 = App->physics->AddBody(*Jump_1, 0.0f);
+	bJump_2 = App->physics->AddBody(*Jump_2, 0.0f);
+	bJump_3 = App->physics->AddBody(*Jump_3, 0.0f);
+	bJump_4 = App->physics->AddBody(*Jump_4, 0.0f);
+	bJump_5 = App->physics->AddBody(*Jump_5, 0.0f);
+	bJump_6 = App->physics->AddBody(*Jump_6, 0.0f);
 
 	return ret;
 }
@@ -191,6 +220,12 @@ update_status ModuleSceneIntro::Update(float dt)
 	cylinder_4->Render();
 	cylinder_5->Render();
 
+	Jump_1->Render();
+	Jump_2->Render();
+	Jump_3->Render();
+	Jump_4->Render();
+	Jump_5->Render();
+	Jump_6->Render();
 
 	float i = 1;
 	++i;
