@@ -23,5 +23,7 @@ And will stop at 3 laps. Then if the player wants to play again has to press R.
 Made by:
 
 [Marc Garcia](https://github.com/MaxitoSama)
+
 [Ivan Drofiak](https://github.com/FurryGhoul)
+
 [Repository link](https://github.com/FurryGhoul/Dirt-Bike)
