@@ -18,7 +18,7 @@ CONTROLS:
 Gameplay
 --------
 The time and lap counter will start when the player crosses the finish line.
-And will stop at 3 laps. Then if the player wants to play again has to press R.
+And will stop after 3 laps. Then, if the player wants to play again he has to press R.
 
 Made by:
 
