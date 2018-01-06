@@ -29,6 +29,7 @@ public:
 	PhysBody3D* pb_snake2[MAX_SNAKE];
 	Sphere s_snake2[MAX_SNAKE];
 	*/
+	p2List<PhysBody3D*> Constraints;
 
 	PhysBody3D* pb_chassis;
 	Cube p_chassis;
@@ -251,4 +252,16 @@ public:
 
 	Cube* rotwall_1;
 	PhysBody3D* brotwall_1;
+
+	Cylinder* column_2;
+	PhysBody3D* bcolumn_2;
+
+	Cube* rotwall_2;
+	PhysBody3D* brotwall_2;
+
+	Cylinder* column_3;
+	PhysBody3D* bcolumn_3;
+
+	Cube* rotwall_3;
+	PhysBody3D* brotwall_3;
 };
