@@ -123,4 +123,61 @@ public:
 	Cylinder* cylinder_5;
 	PhysBody3D* bcylinder_5;
 
+	Cube* barrier_1;
+	PhysBody3D* bbarrier_1;
+
+	Cube* barrier_2;
+	PhysBody3D* bbarrier_2;
+
+	Cube* barrier_3;
+	PhysBody3D* bbarrier_3;
+
+	Cube* barrier_4;
+	PhysBody3D* bbarrier_4;
+
+	Cube* barrier_5;
+	PhysBody3D* bbarrier_5;
+
+	Cube* barrier_6;
+	PhysBody3D* bbarrier_6;
+
+	Cube* barrier_7;
+	PhysBody3D* bbarrier_7;
+
+	Cube* barrier_8;
+	PhysBody3D* bbarrier_8;
+
+	Cube* barrier_9;
+	PhysBody3D* bbarrier_9;
+
+	Cube* barrier_10;
+	PhysBody3D* bbarrier_10;
+
+	Cube* barrier_11;
+	PhysBody3D* bbarrier_11;
+
+	Cube* barrier_12;
+	PhysBody3D* bbarrier_12;
+
+	Cube* barrier_13;
+	PhysBody3D* bbarrier_13;
+
+	Cube* barrier_14;
+	PhysBody3D* bbarrier_14;
+
+	Cube* barrier_15;
+	PhysBody3D* bbarrier_15;
+
+	Cube* barrier_16;
+	PhysBody3D* bbarrier_16;
+
+	Cube* barrier_17;
+	PhysBody3D* bbarrier_17;
+
+	Cube* barrier_18;
+	PhysBody3D* bbarrier_18;
+
+	Cube* barrier_19;
+	PhysBody3D* bbarrier_19;
+
 };
