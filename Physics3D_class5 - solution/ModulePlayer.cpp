@@ -23,11 +23,11 @@ bool ModulePlayer::Start()
 	// Car properties ----------------------------------------
 	car.chassis_size.Set(1, 1, 4);
 	car.chassis_offset.Set(0, 1.5, 0);
-	car.mass = 500.0f;
+	car.mass = 1000.0f;
 	car.suspensionStiffness = 20.88f;
-	car.suspensionCompression = 0.83f;
-	car.suspensionDamping = 0.88f;
-	car.maxSuspensionTravelCm = 1000.0f;
+	car.suspensionCompression = 12.0f;
+	car.suspensionDamping = 20;
+	car.maxSuspensionTravelCm = 700.0f;
 	car.frictionSlip = 50.5;
 	car.maxSuspensionForce = 6000.0f;
 
@@ -68,7 +68,7 @@ bool ModulePlayer::Start()
 	car.wheels[1].radius = wheel_radius;
 	car.wheels[1].width = wheel_width;
 	car.wheels[1].front = false;
-	car.wheels[1].drive = false;
+	car.wheels[1].drive = true;
 	car.wheels[1].brake = true;
 	car.wheels[1].steering = false;
 
@@ -99,11 +99,13 @@ bool ModulePlayer::Start()
 	vehicle = App->physics->AddVehicle(car);
 	vehicle->SetPos(0, 4, 0);
 
-	///*mat4x4 rotation_m = mat4x4(
-	//	1.0f, 0.0f, 0.0f, 0.0f,
-	//	0.0f, 4.0f, 0.0f, 4.0f,
-	//	0.0f, 0.0f, 1.0f, 0.0f,
-	//	0.0f, 0.0f, 0.0f, 1.0f);*/
+	init_matrix = mat4x4(
+		0.5253220f, 0, 0.8509035f, 0,
+		0, 1, 0, 0,
+		-0.8509035f, 0, 0.5253220f, 0,
+		0, 0, 0, 1);
+
+	vehicle->SetTransform(init_matrix.M);
 
 	//vehicle->SetTransform(rotation_m.M);
 	race_time.Start();
@@ -162,6 +164,7 @@ update_status ModulePlayer::Update(float dt)
 	{
 		vehicle->vehicle->getRigidBody()->setLinearVelocity({ 0,0,0 });
 		vehicle->SetPos(0, 5, 0);
+		vehicle->SetTransform(init_matrix.M);
 		race_time.Start();
 		race_time.Stop();
 		start_race = false;

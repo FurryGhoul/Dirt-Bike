@@ -41,6 +41,8 @@ public:
 
 	Timer race_time;
 
+	mat4x4 init_matrix;
+
 	uint laps;
 
 };

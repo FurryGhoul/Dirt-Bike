@@ -180,4 +180,23 @@ public:
 	Cube* barrier_19;
 	PhysBody3D* bbarrier_19;
 
+	Cube* Jump_1;
+	PhysBody3D* bJump_1;
+
+	Cube* Jump_2;
+	PhysBody3D* bJump_2;
+
+	Cube* Jump_3;
+	PhysBody3D* bJump_3;
+
+	Cube* Jump_4;
+	PhysBody3D* bJump_4;
+
+	Cube* Jump_5;
+	PhysBody3D* bJump_5;
+
+	Cube* Jump_6;
+	PhysBody3D* bJump_6;
+
+
 };
