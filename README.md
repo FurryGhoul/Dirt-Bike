@@ -6,8 +6,11 @@ CONTROLS:
 --------
 
  -[UP] Arrow	      = Accelerate
+
  -[DOWN] Arrow	      = Brake and go backwards
+
  -[RIGHT] Arrow	      = Turn Right
+
  -[LEFT] Arrow	      = Turn Left
 
  -[R]		      = Restart
